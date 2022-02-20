@@ -1,0 +1,61 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+*::selection {
+  background:  #1E232D;
+  color:  #fff;
+}
+
+html {
+  font-size: 16px;
+  @include scroll-bar;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.2;
+  color: #fff;
+  background-color: #1E232D;
+}
+
+.main-content {
+  flex: 1 1;
+}
+
+input[type="checkbox"],
+a,
+button,
+label,
+img {
+  @include non-select;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-delay: -1s !important;
+    animation-duration: 1s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01s !important;
+  }
+}

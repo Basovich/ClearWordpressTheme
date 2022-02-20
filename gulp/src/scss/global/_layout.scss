@@ -1,0 +1,64 @@
+.v-container {
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-left: calc( (100% - 1220px) / 2);
+    padding-right: calc( (100% - 1220px) / 2);
+  }
+
+  @media (min-width: 1600px) {
+    padding-left: calc( (100% - 1520px) / 2);
+    padding-right: calc( (100% - 1520px) / 2);
+  }
+}
+
+.v-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -24px;
+
+  .v-row {
+    margin: 0;
+    margin: 0 -24px;
+  }
+}
+
+
+.v-col {
+  flex-basis: 100%;
+  flex-grow: 1;
+  max-width: 100%;
+  margin: 0 24px;
+}
+
+@media (min-width: $media-tablet-md) {
+  @for $i from 1 through 12 {
+    .v-col-md-#{$i} {
+      flex: 0 0 calc((100% / 12) * #{$i});
+      max-width: calc((100% / 12) * #{$i});
+      margin: 0 24px;
+    }
+  }
+}
+
+@media (min-width: $media-desktop-sm) {
+  @for $i from 1 through 12 {
+    .v-col-lg-#{$i} {
+      flex: 0 0 calc((100% / 12) * #{$i});
+      max-width: calc((100% / 12) * #{$i});
+      margin: 0 24px;
+    }
+  }
+}

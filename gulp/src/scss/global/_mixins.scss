@@ -1,0 +1,47 @@
+@mixin scroll-bar {
+	scrollbar-width: auto;
+	scrollbar-color: #EF933F #1E232D;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #1E232D;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #EF933F;
+	}
+}
+
+@mixin non-select {
+	user-select: none;
+	touch-action: pan-y;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@mixin visual-hidden {
+	position: absolute;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(0px 0px 99.9% 99.9%);
+	overflow: hidden;
+	height: 1px;
+	width: 1px;
+	padding: 0;
+	border: 0;
+	top: 50%;
+}
+
+@mixin overflow-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$maxWidth: 1280;
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
