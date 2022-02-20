@@ -27,11 +27,17 @@
 .v-row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -24px;
+  margin-left: -16px;
+  margin-right: -16px;
 
-  .v-row {
-    margin: 0;
-    margin: 0 -24px;
+  @media (min-width: $media-tablet-md) {
+    margin-left: -24px;
+    margin-right: -24px;
+  }
+
+  @media (min-width: $media-desktop-sm) {
+    margin-left: -40px;
+    margin-right: -40px;
   }
 }
 
@@ -40,7 +46,8 @@
   flex-basis: 100%;
   flex-grow: 1;
   max-width: 100%;
-  margin: 0 24px;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 @media (min-width: $media-tablet-md) {
@@ -48,7 +55,8 @@
     .v-col-md-#{$i} {
       flex: 0 0 calc((100% / 12) * #{$i});
       max-width: calc((100% / 12) * #{$i});
-      margin: 0 24px;
+      padding-right: 24px;
+      padding-left: 24px;
     }
   }
 }
@@ -58,7 +66,8 @@
     .v-col-lg-#{$i} {
       flex: 0 0 calc((100% / 12) * #{$i});
       max-width: calc((100% / 12) * #{$i});
-      margin: 0 24px;
+      padding-right: 40px;
+      padding-left: 40px;
     }
   }
 }
