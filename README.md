@@ -1,0 +1,2 @@
+# ClearWordpressTheme
+Clear Wordpress Theme
