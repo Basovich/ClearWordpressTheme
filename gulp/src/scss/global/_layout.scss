@@ -48,6 +48,16 @@
   max-width: 100%;
   padding-right: 16px;
   padding-left: 16px;
+
+  @media (min-width: $media-tablet-md) {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  @media (min-width: $media-desktop-sm) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }
 
 @media (min-width: $media-tablet-md) {
