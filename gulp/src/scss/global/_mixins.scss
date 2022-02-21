@@ -39,9 +39,17 @@
 	text-overflow: ellipsis;
 }
 
-@mixin adaptiv-font($pcSize, $mobSize) {
-	$maxWidth: 1280;
-	$addSize: $pcSize - $mobSize;
-	$maxWidth: $maxWidth - 320;
-	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+@mixin flexible-font-size($minFont,$maxFont) {
+	$minBreakpoint: 320;
+	$maxBreakpoint: 1920;
+	$maxLessOne: $maxBreakpoint - 1;
+	font-size: #{$minFont}px;
+
+	@media (min-width: #{$minBreakpoint}px) and (max-width: #{$maxLessOne}px) {
+		font-size: calc(#{$minFont}px + (#{$maxFont} - #{$minFont}) * (100vw - #{$minBreakpoint}px) / (#{$maxBreakpoint} - #{$minBreakpoint}))
+	}
+
+	@media (min-width: #{$maxBreakpoint}px) {
+		font-size: #{$maxFont}px;
+	}
 }
